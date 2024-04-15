@@ -11,8 +11,8 @@ permalink: /:categories/:title/
 # Authors
 authors:
   shuffle:
-    name: Shuffle
-    display_name: Shuffle
+    name: Shuffle Team
+    display_name: Shuffle Team
     avatar: 'assets/images/logo.jpg'
     web: https://shuffle.github.io
     twitter: https://twitter.com/ShuffleTea38197
