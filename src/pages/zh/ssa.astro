@@ -1,0 +1,141 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+// === CONTENT START ===
+const lang = Astro.currentLocale === 'zh' ? 'zh' : 'en';
+const content = {
+  en: {
+    pageTitle: "Strategic Security Advisory",
+    heroTitle: "Strategic Security Advisory",
+    heroDesc: "Go beyond point-in-time fixes. We act as your long-term partner to help you build a comprehensive, resilient security strategy, architecture, and culture, solving problems from the top down.",
+    heroCta: "Consult Our Team",
+    valueTitle: "Our Strategic Value",
+    valueDesc: "Becoming your most trusted security think tank.",
+    value1Title: "Expert Security Consulting",
+    value1Desc: "Providing holistic expert advice on security architecture design, threat modeling, incident response planning, and compliance.",
+    value2Title: "Custom Security Solutions",
+    value2Desc: "Designing and developing bespoke security tools, protocols, and solutions for your unique business challenges.",
+    value3Title: "Security Training & Awareness",
+    value3Desc: "Delivering cutting-edge, hands-on security training for your development, operations, and management teams to raise the entire organization's security posture.",
+    processTitle: "Our Engagement Model",
+    processDesc: "Flexible and in-depth, growing with you.",
+    processStep1Title: "1. Deep Dive & Assessment",
+    processStep1Desc: "Gaining a deep understanding of your business goals, technical architecture, and existing processes to assess your current security maturity.",
+    processStep2Title: "2. Strategy & Roadmap Design",
+    processStep2Desc: "Tailoring a clear, actionable security strategy and a phased implementation roadmap for you.",
+    processStep3Title: "3. Implementation Support & Training",
+    processStep3Desc: "We don't just provide a plan; we assist your team in its execution and ensure knowledge transfer through training.",
+    processStep4Title: "4. Continuous Review & Optimization",
+    processStep4Desc: "As your long-term partner, we regularly review and adjust the security strategy to adapt to business and threat landscape changes.",
+    finalCtaTitle: "Ready to build a truly resilient security program?",
+    finalCtaButton: "Start a Strategic Conversation",
+  },
+  zh: {
+    pageTitle: "战略安全顾问",
+    heroTitle: "战略安全顾问服务",
+    heroDesc: "超越单点修复。我们作为您的长期伙伴，帮助您构建一个全面、有弹性的安全战略、架构与文化，从顶层设计上解决问题。",
+    heroCta: "与专家团队沟通",
+    valueTitle: "我们提供的战略价值",
+    valueDesc: "成为您最值得信赖的安全智囊。",
+    value1Title: "专家安全咨询",
+    value1Desc: "提供安全架构设计、威胁建模、应急响应计划、合规性指导等全方位的专家建议。",
+    value2Title: "定制化解决方案",
+    value2Desc: "针对您独特的业务挑战，为您设计和研发专属的安全工具、协议与解决方案。",
+    value3Title: "安全培训与意识提升",
+    value3Desc: "为您的开发、运维和管理团队提供前沿的、实战驱动的安全培训，提升整个组织的安全水位。",
+    processTitle: "我们的合作模式",
+    processDesc: "灵活、深入，与您共同成长。",
+    processStep1Title: "1. 深度访谈与评估",
+    processStep1Desc: "深入了解您的业务目标、技术架构和现有流程，全面评估当前的安全成熟度。",
+    processStep2Title: "2. 战略与路线图设计",
+    processStep2Desc: "为您量身定制一份清晰、可行的安全战略和分阶段实施的路线图。",
+    processStep3Title: "3. 实施支持与培训",
+    processStep3Desc: "我们不仅提供方案，还会协助您的团队进行落地，并通过培训确保知识转移。",
+    processStep4Title: "4. 持续的审查与优化",
+    processStep4Desc: "作为您的长期伙伴，我们会定期回顾和调整安全战略，以适应业务和威胁环境的变化。",
+    finalCtaTitle: "准备好构建一个真正有弹性的安全体系了吗？",
+    finalCtaButton: "与我们开启战略对话",
+  }
+};
+const t = content[lang];
+// === CONTENT END ===
+---
+
+<Layout title={t.pageTitle}>
+  <Container>
+    <!-- Hero Section -->
+    <div class="grid lg:grid-cols-2 place-items-center gap-12 pt-16 pb-8 md:pt-24 md:pb-16">
+      <div class="py-6 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4">{t.heroTitle}</h1>
+        <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">{t.heroDesc}</p>
+        <Link href={`/${lang}/contact`} size="lg">{t.heroCta}</Link>
+      </div>
+      <div class="hidden lg:block">
+        <Icon name="mdi:chess-king" class="w-80 h-80 text-indigo-200 mx-auto" />
+      </div>
+    </div>
+
+    <!-- What We Offer Section -->
+    <Sectionhead class="mt-16 text-center">
+      <Fragment slot="title">{t.valueTitle}</Fragment>
+      <Fragment slot="desc">{t.valueDesc}</Fragment>
+    </Sectionhead>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:lightbulb-on-outline" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.value1Title}</h3>
+        <p class="text-slate-600">{t.value1Desc}</p>
+      </div>
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:tools" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.value2Title}</h3>
+        <p class="text-slate-600">{t.value2Desc}</p>
+      </div>
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:school-outline" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.value3Title}</h3>
+        <p class="text-slate-600">{t.value3Desc}</p>
+      </div>
+    </div>
+
+    <!-- Our Engagement Model Section -->
+    <Sectionhead class="mt-24 text-center">
+      <Fragment slot="title">{t.processTitle}</Fragment>
+      <Fragment slot="desc">{t.processDesc}</Fragment>
+    </Sectionhead>
+    <div class="mt-12 max-w-3xl mx-auto">
+      <div class="space-y-8 border-l-2 border-dashed border-slate-300 pl-8">
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep1Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep1Desc}</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep2Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep2Desc}</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep3Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep3Desc}</p>
+        </div>
+         <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep4Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep4Desc}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="text-center mt-24 py-16 bg-slate-50 rounded-lg">
+      <h2 class="text-3xl font-bold mb-4">{t.finalCtaTitle}</h2>
+      <Link href={`/${lang}/contact`} size="lg" class="mt-4">{t.finalCtaButton}</Link>
+    </div>
+  </Container>
+</Layout>

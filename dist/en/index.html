@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/sst.svg"><meta name="generator" content="Astro v5.13.7"><!-- <link rel="preload" as="image" href={src} alt="Hero" /> --><title>Shuffle Team</title><link rel="canonical" href="https://astroship.web3templates.com/en/"><meta name="description" content="Shuffle Team combines elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business."><meta name="robots" content="index, follow"><meta property="og:title" content="Shuffle Team"><meta property="og:type" content="website"><meta property="og:image" content="https://astroship.web3templates.com/sst.png"><meta property="og:url" content="https://astroship.web3templates.com/en/"><meta property="og:image:url" content="https://astroship.web3templates.com/sst.png"><meta property="og:image:alt" content="ShuffleTeam Homepage Screenshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@web3templates"><meta name="twitter:creator" content="@wugedbl"><link rel="stylesheet" href="/_astro/about.CGd3VL5k.css"></head> <body> <div class="max-w-(--breakpoint-xl) mx-auto px-5">  <header class="flex flex-col lg:flex-row justify-between items-center my-5">  <div class="flex w-full lg:w-auto items-center justify-between"> <a href="/" class="text-lg"><span class="font-bold text-slate-800">Shuffle</span><span class="text-slate-500">Team</span> </a> <div class="block lg:hidden"> <button id="astronav-menu" aria-label="Toggle Menu">  <svg fill="currentColor" class="w-4 h-4 text-gray-800" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <title>Toggle Menu</title> <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path> <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path> </svg>  </button> </div> </div> <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">  <ul class="flex flex-col lg:flex-row lg:gap-3"> <li class="relative"> <menu class="astronav-dropdown group" aria-expanded="false"> <button class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900"> <span>Services</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-0.5 group-open:rotate-180"> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path> </svg> </button> <div class="astronav-dropdown dropdown-toggle hidden" aria-expanded="false">  <div class="lg:absolute w-full lg:w-66 z-10 lg:left-0 origin-top-left"> <div class="px-2 py-1.5 lg:bg-white lg:rounded-md lg:shadow-lg lg:border flex flex-col gap-1"> <a href="/en/sas" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Security Assessments &amp; Audits </a><a href="/en/csf" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Continuous Security &amp; Fuzzing </a><a href="/en/ssa" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Strategic Security Advisory </a> </div> </div>  </div> </menu> </li><li> <a href="/blog" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Blog</span>  </a> </li><li> <a href="/about" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> About</span>  </a> </li><li> <a href="/contact" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Contact</span>  </a> </li> </ul>   </nav>  <script>(function(){const closeOnClick = false;
+
+["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+  document.addEventListener(event, addListeners);
+});
+
+// Function to clone and replace elements
+function cloneAndReplace(element) {
+  const clone = element.cloneNode(true);
+  element.parentNode.replaceChild(clone, element);
+}
+
+function addListeners() {
+  // Clean up existing listeners
+  const oldMenuButton = document.getElementById("astronav-menu");
+  if (oldMenuButton) {
+    cloneAndReplace(oldMenuButton);
+  }
+
+  const oldDropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  oldDropdownMenus.forEach((menu) => {
+    cloneAndReplace(menu);
+  });
+
+  // Mobile nav toggle
+  const menuButton = document.getElementById("astronav-menu");
+  menuButton && menuButton.addEventListener("click", toggleMobileNav);
+
+  // Dropdown menus
+  const dropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  dropdownMenus.forEach((menu) => {
+    const button = menu.querySelector("button");
+    button &&
+      button.addEventListener("click", (event) =>
+        toggleDropdownMenu(event, menu, dropdownMenus)
+      );
+
+    // Handle Submenu Dropdowns
+    const dropDownSubmenus = menu.querySelectorAll(
+      ".astronav-dropdown-submenu"
+    );
+
+    dropDownSubmenus.forEach((submenu) => {
+      const submenuButton = submenu.querySelector("button");
+      submenuButton &&
+        submenuButton.addEventListener("click", (event) => {
+          event.stopImmediatePropagation();
+          toggleSubmenuDropdown(event, submenu);
+        });
+    });
+  });
+
+  // Clicking away from dropdown will remove the dropdown class
+  document.addEventListener("click", closeAllDropdowns);
+
+  if (closeOnClick) {
+    handleCloseOnClick();
+  }
+}
+
+function toggleMobileNav() {
+  [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+function toggleDropdownMenu(event, menu, dropdownMenus) {
+  toggleMenu(menu);
+
+  // Close one dropdown when selecting another
+  Array.from(dropdownMenus)
+    .filter((el) => el !== menu && !menu.contains(el))
+    .forEach(closeMenu);
+
+  event.stopPropagation();
+}
+
+function toggleSubmenuDropdown(event, submenu) {
+  event.stopPropagation();
+  toggleMenu(submenu);
+
+  // Close sibling submenus at the same nesting level
+  const siblingSubmenus = submenu
+    .closest(".astronav-dropdown")
+    .querySelectorAll(".astronav-dropdown-submenu");
+  Array.from(siblingSubmenus)
+    .filter((el) => el !== submenu && !submenu.contains(el))
+    .forEach(closeMenu);
+}
+
+function closeAllDropdowns(event) {
+  const dropdownMenus = document.querySelectorAll(".dropdown-toggle");
+  const dropdownParent = document.querySelectorAll(
+    ".astronav-dropdown, .astronav-dropdown-submenu"
+  );
+  const isButtonInsideDropdown = [
+    ...document.querySelectorAll(
+      `.astronav-dropdown button, .astronav-dropdown label, .astronav-dropdown input,
+	  .astronav-dropdown-submenu button, .astronav-dropdown-submenu label, .astronav-dropdown-submenu input,
+	  #astronav-menu`
+    ),
+  ].some((button) => button.contains(event.target));
+  if (!isButtonInsideDropdown) {
+    dropdownMenus.forEach((d) => {
+      // console.log("I ran", d);
+      // if (!d.contains(event.target)) {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.classList.add("hidden");
+      // }
+    });
+    dropdownParent.forEach((d) => {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.setAttribute("aria-expanded", "false");
+    });
+  }
+}
+
+function toggleMenu(menu) {
+  menu.classList.toggle("open");
+  const expanded = menu.getAttribute("aria-expanded") === "true";
+  menu.setAttribute("aria-expanded", expanded ? "false" : "true");
+  menu.hasAttribute("open")
+    ? menu.removeAttribute("open")
+    : menu.setAttribute("open", "");
+
+  const dropdownToggle = menu.querySelector(".dropdown-toggle");
+  const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+  dropdownToggle.classList.toggle("hidden");
+  dropdownToggle.setAttribute(
+    "aria-expanded",
+    dropdownExpanded === "true" ? "false" : "true"
+  );
+}
+
+function closeMenu(menu) {
+  // console.log("closing", menu);
+  menu.classList.remove("open");
+  menu.removeAttribute("open");
+  menu.setAttribute("aria-expanded", "false");
+  const dropdownToggles = menu.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    toggle.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function handleCloseOnClick() {
+  const navMenuItems = document.querySelector(".astronav-items");
+  const navToggle = document.getElementById("astronav-menu");
+  const navLink = navMenuItems && navMenuItems.querySelectorAll("a");
+
+  const MenuIcons = navToggle.querySelectorAll(".astronav-toggle");
+
+  navLink &&
+    navLink.forEach((item) => {
+      item.addEventListener("click", () => {
+        navMenuItems?.classList.add("hidden");
+        MenuIcons.forEach((el) => {
+          el.classList.toggle("hidden");
+        });
+      });
+    });
+}
+})();</script> <div slot="actions"> <!-- <a 
+  href={targetPath} 
+  class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>
+  {buttonText}
+</a> --><!-- 如果您更喜欢两个并排的链接，而不是单个切换按钮，可以使用下面的代码 --><div class="flex items-center gap-2 text-sm"><a href="/en" class="hover:text-indigo-600 transition-colors font-bold text-indigo-600 pointer-events-none">
+English
+</a><span class="text-gray-300">|</span><a href="/zh" class="hover:text-indigo-600 transition-colors">
+中文
+</a></div> </div> <!-- <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#">Log in</a>
+        <Link href="#" size="md">Sign up</Link>
+      </div>
+    </div> --> </header>  </div>  <div class="max-w-(--breakpoint-xl) mx-auto px-5">  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24"> <div class="py-6 md:order-1 hidden md:block"> <picture> <source srcset="/_astro/shuffle2.BQGjOf7a_ZQ57Pw.webp 200w, /_astro/shuffle2.BQGjOf7a_2aaO3y.webp 400w, /_astro/shuffle2.BQGjOf7a_6eC8H.webp 600w" type="image/webp" sizes="(max-width: 800px) 100vw, 620px">  <img src="/_astro/shuffle2.BQGjOf7a_Z1UTsi5.png" srcset="/_astro/shuffle2.BQGjOf7a_2uJyY9.png 200w, /_astro/shuffle2.BQGjOf7a_qNn4i.png 400w, /_astro/shuffle2.BQGjOf7a_Z1C7NPy.png 600w" alt="Shuffle Team in the air" sizes="(max-width: 800px) 100vw, 620px" loading="eager" decoding="async" fetchpriority="auto" width="1284" height="1285"> </picture> </div> <div> <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter"> <!-- Human Insight x Machine Efficiency. --> Human Insight x Machine Efficiency. <!-- Find more, faster. --> </h1> <p class="text-lg mt-4 text-slate-600 max-w-xl"> <!-- Astroship is a starter template for startups, marketing websites & landing
+      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
+      create any website with this starter. --> <!-- We combine elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business. --> We combine elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business. </p> <div class="mt-6 flex flex-col sm:flex-row gap-3"> <a href="/about" target="_blank" rel="noopener" class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent flex gap-1 items-center justify-center">   Explore Our Approach </a> <a href="/contact" rel="noopener" target="_blank" class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white border-2 border-black hover:bg-gray-100 text-black  flex gap-1 items-center justify-center">   Schedule a Consultation </a> </div> </div> </main> <div class="mt-16 md:mt-0"> <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight"> The Complete Framework for Intelligent Defense </h2> <p class="text-lg mt-4 text-slate-600"> Our approach provides a full spectrum of security solutions, ready for any challenge. It&#39;s built on the proven, offensive-minded methodologies of elite security experts and amplified by our proprietary AI-powered analysis. </p> </div> <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16"> <div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-bot">   <symbol id="ai:bx:bxs-bot" viewBox="0 0 24 24"><path d="M21 10.975V8a2 2 0 0 0-2-2h-6V4.688c.305-.274.5-.668.5-1.11a1.5 1.5 0 0 0-3 0c0 .442.195.836.5 1.11V6H5a2 2 0 0 0-2 2v2.998l-.072.005A.999.999 0 0 0 2 12v2a1 1 0 0 0 1 1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a1 1 0 0 0 1-1v-1.938a1.004 1.004 0 0 0-.072-.455c-.202-.488-.635-.605-.928-.632zM7 12c0-1.104.672-2 1.5-2s1.5.896 1.5 2s-.672 2-1.5 2S7 13.104 7 12zm8.998 6c-1.001-.003-7.997 0-7.998 0v-2s7.001-.002 8.002 0l-.004 2zm-.498-4c-.828 0-1.5-.896-1.5-2s.672-2 1.5-2s1.5.896 1.5 2s-.672 2-1.5 2z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-bot"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">AI-Augmented Expertise</h3>  <p class="text-slate-500 mt-2 leading-relaxed">We merge expert intuition with AI-powered analysis to find deep vulnerabilities that automated tools and human-only approaches miss.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-window-alt">   <symbol id="ai:bx:bxs-window-alt" viewBox="0 0 24 24"><path d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-3 3h2v2h-2V6zm-3 0h2v2h-2V6zM4 19v-9h16.001l.001 9H4z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-window-alt"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Full-Stack Security Coverage</h3>  <p class="text-slate-500 mt-2 leading-relaxed">From Web3 to mobile and desktop applications, our team has the specialized knowledge to secure your specific technology stack.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-data">   <symbol id="ai:bx:bxs-data" viewBox="0 0 24 24"><path d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z" fill="currentColor"/><path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-data"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Actionable Intelligence, Not Noise</h3>  <p class="text-slate-500 mt-2 leading-relaxed">We distill complex findings into prioritized, actionable steps, empowering your team to fix what matters most, fast.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-user">   <symbol id="ai:bx:bxs-user" viewBox="0 0 24 24"><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2S7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-user"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Offensive-Minded Defense</h3>  <p class="text-slate-500 mt-2 leading-relaxed">We think and act like attackers, using advanced techniques like fuzzing to anticipate and neutralize threats before they emerge.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-file-find">   <symbol id="ai:bx:bxs-file-find" viewBox="0 0 24 24"><path d="M6 22h12c.178 0 .348-.03.512-.074l-3.759-3.759A4.966 4.966 0 0 1 12 19c-2.757 0-5-2.243-5-5s2.243-5 5-5s5 2.243 5 5a4.964 4.964 0 0 1-.833 2.753l3.759 3.759c.044-.164.074-.334.074-.512V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z" fill="currentColor"/><circle cx="12" cy="14" r="3" fill="currentColor"/></symbol><use href="#ai:bx:bxs-file-find"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Solutions Beyond a Report</h3>  <p class="text-slate-500 mt-2 leading-relaxed">Our partnership extends beyond the final report. We provide ongoing advisory and training, acting as an extension of your team&#39;s security capabilities.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-briefcase">   <symbol id="ai:bx:bxs-briefcase" viewBox="0 0 24 24"><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v3h20V8c0-1.103-.897-2-2-2zM9 4h6v2H9V4zm5 10h-4v-2H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-8v2z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-briefcase"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Built for Modern Development</h3>  <p class="text-slate-500 mt-2 leading-relaxed">Our services and tools are designed to integrate seamlessly into your DevSecOps workflow, making security an accelerator for innovation, not a roadblock.</p> </div> </div> </div> <div class="mt-24"> <h2 class="text-center text-slate-500">Acknowledged by Industry Leaders</h2> <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap"> <svg width="1em" height="1em" class="size-8 md:size-12" data-icon="simple-icons:apple">   <symbol id="ai:simple-icons:apple" viewBox="0 0 24 24"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04c-2.04.027-3.91 1.183-4.961 3.014c-2.117 3.675-.546 9.103 1.519 12.09c1.013 1.454 2.208 3.09 3.792 3.039c1.52-.065 2.09-.987 3.935-.987c1.831 0 2.35.987 3.96.948c1.637-.026 2.676-1.48 3.676-2.948c1.156-1.688 1.636-3.325 1.662-3.415c-.039-.013-3.182-1.221-3.22-4.857c-.026-3.04 2.48-4.494 2.597-4.559c-1.429-2.09-3.623-2.324-4.39-2.376c-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83c-1.207.052-2.662.805-3.532 1.818c-.78.896-1.454 2.338-1.273 3.714c1.338.104 2.715-.688 3.559-1.701"/></symbol><use href="#ai:simple-icons:apple"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-12" data-icon="simple-icons:google">   <symbol id="ai:simple-icons:google" viewBox="0 0 24 24"><path fill="currentColor" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133c-1.147 1.147-2.933 2.4-6.053 2.4c-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0C5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36c2.16-2.16 2.84-5.213 2.84-7.667c0-.76-.053-1.467-.173-2.053z"/></symbol><use href="#ai:simple-icons:google"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-12" data-icon="simple-icons:windows">   <symbol id="ai:simple-icons:windows" viewBox="0 0 24 24"><path fill="currentColor" d="M0 0h11.377v11.372H0Zm12.623 0H24v11.372H12.623ZM0 12.623h11.377V24H0Zm12.623 0H24V24H12.623"/></symbol><use href="#ai:simple-icons:windows"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-16" data-icon="simple-icons:samsung">   <symbol id="ai:simple-icons:samsung" viewBox="0 0 24 24"><path fill="currentColor" d="m19.817 10.28l.046 2.694h-.023l-.78-2.693h-1.283v3.392h.848l-.046-2.785h.023l.836 2.785h1.227v-3.392zm-16.15 0l-.641 3.428h.928l.47-3.118h.023l.459 3.118h.916l-.63-3.427zm5.181 0l-.424 2.614h-.023l-.424-2.613H6.58l-.069 3.427h.86l.023-3.083h.011l.573 3.083h.871l.573-3.083h.023l.023 3.083h.86l-.08-3.427zm-7.266 2.454a.5.5 0 0 1 .011.252c-.023.114-.103.229-.332.229c-.218 0-.344-.126-.344-.31v-.332H0v.264c0 .768.607.997 1.25.997c.618 0 1.134-.218 1.214-.78c.046-.298.012-.492 0-.561c-.16-.722-1.467-.929-1.559-1.33a.5.5 0 0 1 0-.183c.023-.115.104-.23.31-.23s.32.127.32.31v.206h.86v-.24c0-.745-.676-.86-1.157-.86c-.608 0-1.112.206-1.204.757a1.04 1.04 0 0 0 .012.458c.137.71 1.364.917 1.536 1.352m11.152 0c.034.08.022.184.011.253c-.023.114-.103.229-.332.229c-.218 0-.344-.126-.344-.31v-.332h-.917v.264c0 .756.596.985 1.238.985c.619 0 1.123-.206 1.203-.779c.046-.298.012-.481 0-.562c-.137-.71-1.433-.928-1.524-1.318a.5.5 0 0 1 0-.183c.023-.115.103-.23.31-.23c.194 0 .32.127.32.31v.206h.848v-.24c0-.745-.665-.86-1.146-.86c-.607 0-1.1.195-1.192.757c-.023.149-.023.286.012.458c.137.71 1.34.905 1.513 1.352m2.888.459c.24 0 .31-.16.332-.252c.012-.035.012-.092.012-.126V10.28h.87v2.464c0 .069 0 .195-.01.23c-.058.641-.562.847-1.193.847c-.63 0-1.134-.206-1.192-.848c0-.034-.011-.16-.011-.229V10.28h.87v2.533c0 .046 0 .091.012.126c0 .091.07.252.31.252m7.152-.034c.252 0 .332-.16.355-.253c.011-.034.011-.091.011-.126v-.493h-.355v-.504H24v.917c0 .069 0 .115-.011.23c-.058.63-.597.847-1.204.847s-1.146-.217-1.203-.848c-.012-.114-.012-.16-.012-.229v-1.444c0-.057.012-.172.012-.23c.08-.641.596-.847 1.203-.847s1.135.206 1.203.848c.012.103.012.229.012.229v.115h-.86v-.195s0-.08-.011-.126c-.012-.08-.08-.252-.344-.252c-.252 0-.32.16-.344.252c-.011.045-.011.103-.011.16v1.57c0 .046 0 .092.011.126c0 .092.092.253.333.253"/></symbol><use href="#ai:simple-icons:samsung"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-16" data-icon="simple-icons:huawei">   <symbol id="ai:simple-icons:huawei" viewBox="0 0 24 24"><path fill="currentColor" d="M3.67 6.14S1.82 7.91 1.72 9.78v.35c.08 1.51 1.22 2.4 1.22 2.4c1.83 1.79 6.26 4.04 7.3 4.55c0 0 .06.03.1-.01l.02-.04v-.04C7.52 10.8 3.67 6.14 3.67 6.14M9.65 18.6c-.02-.08-.1-.08-.1-.08l-7.38.26c.8 1.43 2.15 2.53 3.56 2.2c.96-.25 3.16-1.78 3.88-2.3c.06-.05.04-.09.04-.09zm.08-.78C6.49 15.63.21 12.28.21 12.28c-.15.46-.2.9-.21 1.3v.07c0 1.07.4 1.82.4 1.82c.8 1.69 2.34 2.2 2.34 2.2c.7.3 1.4.31 1.4.31c.12.02 4.4 0 5.54 0c.05 0 .08-.05.08-.05v-.06c0-.03-.03-.05-.03-.05M9.06 3.19a3.42 3.42 0 0 0-2.57 3.15v.41c.03.6.16 1.05.16 1.05c.66 2.9 3.86 7.65 4.55 8.65c.05.05.1.03.1.03a.1.1 0 0 0 .06-.1c1.06-10.6-1.11-13.42-1.11-13.42c-.32.02-1.19.23-1.19.23m8.299 2.27s-.49-1.8-2.44-2.28c0 0-.57-.14-1.17-.22c0 0-2.18 2.81-1.12 13.43c.01.07.06.08.06.08c.07.03.1-.03.1-.03c.72-1.03 3.9-5.76 4.55-8.64c0 0 .36-1.4.02-2.34m-2.92 13.07s-.07 0-.09.05c0 0-.01.07.03.1c.7.51 2.85 2 3.88 2.3c0 0 .16.05.43.06h.14c.69-.02 1.9-.37 3-2.26l-7.4-.25zm7.83-8.41c.14-2.06-1.94-3.97-1.94-3.98c0 0-3.85 4.66-6.67 10.8c0 0-.03.08.02.13l.04.01h.06c1.06-.53 5.46-2.77 7.28-4.54c0 0 1.15-.93 1.21-2.42m1.52 2.14s-6.28 3.37-9.52 5.55c0 0-.05.04-.03.11c0 0 .03.06.07.06c1.16 0 5.56 0 5.67-.02c0 0 .57-.02 1.27-.29c0 0 1.56-.5 2.37-2.27c0 0 .73-1.45.17-3.14"/></symbol><use href="#ai:simple-icons:huawei"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-12" data-icon="simple-icons:honor">   <symbol id="ai:simple-icons:honor" viewBox="0 0 24 24"><path fill="currentColor" d="M2.601 9.753v1.823H.807V9.753H0v4.498h.807v-1.874h1.794v1.874h.807V9.753zm18.671.801h.898c.369 0 .667.297.667.662a.665.665 0 0 1-.667.663h-.898zm-.806-.801v4.498h.806v-2.002l1.68 2.002H24l-1.376-1.64a1.462 1.462 0 0 0-.444-2.858h-1.716zm-7.63-.014v2.807l-1.959-2.807h-.644v4.498h.807v-2.82l1.968 2.82h.633V9.739zm-7.532 2.26c0-.832.68-1.506 1.517-1.506A1.51 1.51 0 0 1 8.337 12c0 .832-.679 1.506-1.516 1.506c-.403 0-.789-.159-1.073-.441A1.5 1.5 0 0 1 5.304 12zM4.497 12c0 .933.566 1.774 1.434 2.132c.869.357 1.868.16 2.533-.5s.863-1.653.503-2.515a2.32 2.32 0 0 0-2.146-1.425a2.316 2.316 0 0 0-2.323 2.307zm11.04-.001a1.513 1.513 0 0 1 1.518-1.506c.838 0 1.516.675 1.516 1.507a1.513 1.513 0 0 1-1.518 1.506c-.402 0-.788-.159-1.072-.441a1.5 1.5 0 0 1-.444-1.066M14.73 12c0 .933.566 1.774 1.434 2.132c.868.357 1.868.16 2.532-.5c.665-.66.864-1.653.504-2.515a2.325 2.325 0 0 0-2.147-1.425a2.316 2.316 0 0 0-2.323 2.307z"/></symbol><use href="#ai:simple-icons:honor"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-12" data-icon="simple-icons:smartthings">   <symbol id="ai:simple-icons:smartthings" viewBox="0 0 24 24"><path fill="currentColor" d="M11.51 0C8.338 0 5.034.537 2.694 2.694C.5 5.174 0 8.464 0 11.525v.942c0 3.165.537 6.499 2.694 8.84C5.188 23.513 8.494 24 11.569 24h.854c3.18 0 6.528-.53 8.883-2.694C23.514 18.811 24 15.5 24 12.423v-.853c0-3.18-.53-6.528-2.694-8.876C18.826.494 15.544 0 12.482 0zM12 3.505c1.244 0 2.256.99 2.256 2.206c0 1.065-.685 1.976-1.715 2.181v1.59c1.48.214 2.528 1.43 2.528 2.934c0 1.654-1.377 3-3.07 3s-3.068-1.346-3.068-3q.002-.255.045-.497l-1.536-.488a2.26 2.26 0 0 1-1.962 1.12q-.357 0-.698-.11c-1.183-.375-1.833-1.622-1.449-2.78a2.25 2.25 0 0 1 2.146-1.524q.357 0 .698.108a2.23 2.23 0 0 1 1.313 1.098c.204.391.282.823.232 1.249l1.535.488c.44-.86 1.378-1.453 2.384-1.599V7.892c-1.029-.205-1.896-1.116-1.896-2.181c0-1.217 1.012-2.206 2.257-2.206m0 .882c-.747 0-1.354.594-1.354 1.324S11.253 7.035 12 7.035c.746 0 1.354-.594 1.354-1.324S12.746 4.387 12 4.387m6.522 3.75c.98 0 1.843.613 2.146 1.525a2.15 2.15 0 0 1-.135 1.683a2.22 2.22 0 0 1-1.314 1.096q-.341.11-.698.11a2.26 2.26 0 0 1-1.962-1.12l-.634.201l-.278-.838l.632-.202a2.21 2.21 0 0 1 1.546-2.347a2.3 2.3 0 0 1 .697-.108M5.476 9.02c-.588 0-1.105.368-1.287.915a1.32 1.32 0 0 0 .869 1.668q.205.065.419.065c.588 0 1.105-.368 1.287-.915a1.3 1.3 0 0 0-.081-1.01a1.34 1.34 0 0 0-.788-.658a1.4 1.4 0 0 0-.42-.065zm13.045 0q-.213 0-.419.065a1.32 1.32 0 0 0-.869 1.668c.182.547.7.915 1.287.915a1.4 1.4 0 0 0 .42-.065c.344-.11.623-.343.787-.659c.165-.315.193-.673.082-1.009a1.35 1.35 0 0 0-1.288-.915M12 10.474c-1.095 0-1.986.871-1.986 1.942s.89 1.941 1.986 1.941c1.094 0 1.985-.87 1.985-1.94c0-1.072-.89-1.943-1.985-1.943m-2.706 4.831l.73.519l-.39.526c.709.757.801 1.925.16 2.787a2.28 2.28 0 0 1-1.827.91c-.478 0-.937-.147-1.325-.422a2.177 2.177 0 0 1-.499-3.082a2.28 2.28 0 0 1 2.76-.71zm5.41 0l.392.528a2.285 2.285 0 0 1 2.76.71a2.18 2.18 0 0 1-.499 3.082a2.3 2.3 0 0 1-1.325.421a2.28 2.28 0 0 1-1.827-.91a2.17 2.17 0 0 1 .16-2.785l-.39-.527zm-6.734 1.21a1.37 1.37 0 0 0-1.097.547c-.44.59-.304 1.42.3 1.849a1.37 1.37 0 0 0 1.891-.293c.44-.59.305-1.42-.3-1.85a1.36 1.36 0 0 0-.794-.252zm8.059 0c-.287 0-.561.088-.795.254a1.307 1.307 0 0 0-.299 1.849a1.37 1.37 0 0 0 1.891.293a1.307 1.307 0 0 0 .3-1.85a1.37 1.37 0 0 0-1.097-.545Z"/></symbol><use href="#ai:simple-icons:smartthings"></use>  </svg> <svg width="1em" height="1em" class="size-8 md:size-12" data-icon="simple-icons:linux">   <symbol id="ai:simple-icons:linux" viewBox="0 0 24 24"><path fill="currentColor" d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298c-.076 1.092-.3 1.953-1.05 3.02c-.885 1.051-2.127 2.75-2.716 4.521c-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839c-.199.199-.485.267-.797.4c-.313.136-.658.269-.864.68c-.09.189-.136.394-.132.602c0 .199.027.4.055.536c.058.399.116.728.04.97c-.249.68-.28 1.145-.106 1.484c.174.334.535.47.94.601c.81.2 1.91.135 2.774.6c.926.466 1.866.67 2.616.47c.526-.116.97-.464 1.208-.946c.587-.003 1.23-.269 2.26-.334c.699-.058 1.574.267 2.577.2c.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503c.348-.199.629-.469.649-.853c.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926c-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694c-.533-1.41-1.465-2.638-2.175-3.483c-.796-1.005-1.576-1.957-1.56-3.368c.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198c.19.135.33.332.438.533c.105.259.158.459.166.724c0-.02.006-.04.006-.06v.105l-.004-.021l-.004-.024a1.8 1.8 0 0 1-.15.706a.95.95 0 0 1-.213.335a1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333c-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334a1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768a1.08 1.08 0 0 1 .43-.533a1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135c.146.129.264.288.344.465c.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024c-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267a.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27a1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334c.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068a2.6 2.6 0 0 1-.275-.402a1.8 1.8 0 0 1-.155-.667a1.8 1.8 0 0 1 .08-.668a1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399c.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465c-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067a4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336c.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601c.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473c.286.534.855 1.659 1.102 3.024c.156-.005.33.018.513.064c.646-1.671-.546-3.467-1.089-3.966c-.22-.2-.232-.335-.123-.335c.59.534 1.365 1.572 1.646 2.757c.13.535.16 1.104.021 1.67c.067.028.135.06.205.067c1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224c-.915-.4-1.646-.336-1.77.465c-.008.043-.013.066-.018.135c-.068.023-.139.053-.209.064c-.43.268-.662.669-.793 1.187c-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35c-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533a1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396c-.165-.534-.143-1.085-.015-1.645c.245-1.07.873-2.11 1.274-2.763c.107-.065.037.135-.408.974c-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268c.048.036.217.135.289.202c.218.133.38.333.59.465c.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268c.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377c.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876c.085.4.154.78.409 1.066c.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595c-.63.401-1.746.712-2.457 1.57c-.618.737-1.37 1.14-2.036 1.191c-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69c.176-.668.428-1.344.463-1.897c.037-.714.076-1.335.195-1.814c.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664l.003.003c.243.533.754 1.064 1.189 1.637c.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294c-.645.135-1.52.002-2.395-.464c-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118c-.055-.401-.083-.71.043-.94c.16-.334.396-.4.69-.533c.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838c.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535c-.542 0-.97-.267-1.28-.466c-.154-.134-.28-.268-.373-.335c-.164-.134-.144-.333-.074-.333c.109.016.129.134.199.2c.096.066.215.2.36.333c.292.2.68.467 1.167.467c.485 0 1.053-.267 1.398-.466c.195-.135.445-.334.648-.467c.156-.136.149-.267.279-.267c.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05c.074-.043.18-.027.26.004c.063 0 .16.067.15.135c-.006.049-.085.066-.135.066c-.055 0-.092-.043-.141-.068c-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066c-.047.025-.086.068-.14.068c-.05 0-.13-.02-.136-.068c-.01-.066.088-.133.15-.133c.08-.031.184-.047.259-.005c.019.009.036.03.03.05v.02h.003z"/></symbol><use href="#ai:simple-icons:linux"></use>  </svg> </div> </div>   </div>  <footer class="my-20"> <p class="text-center text-sm text-slate-500">
+Copyright © 2025 ShuffleTeam. All rights reserved.
+</p> <!--
+    Can we ask you a favor 🙏
+    Please keep this backlink on your website if possible.
+    or Purchase a commercial license from https://web3templates.com
+
+  <p class="text-center text-xs text-slate-500 mt-1">
+    Made by <a
+      href="https://web3templates.com"
+      target="_blank"
+      rel="noopener"
+      class="hover:underline">
+      Web3Templates
+    </a>
+  </p>
+  --> </footer>  </body> </html>

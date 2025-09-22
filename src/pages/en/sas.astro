@@ -1,0 +1,142 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+// === CONTENT START ===
+// 根据语言版本，从下方对照表中选择内容
+const lang = Astro.currentLocale === 'zh' ? 'zh' : 'en';
+const content = {
+  en: {
+    pageTitle: "Security Assessments & Audits",
+    heroTitle: "In-Depth Security Assessments & Audits",
+    heroDesc: "Gain a comprehensive, clear understanding of your system's security posture before you ship. We dive deep into your code and architecture to uncover overlooked risks and provide actionable remediation advice.",
+    heroCta: "Schedule a Consultation",
+    scopeTitle: "What We Audit",
+    scopeDesc: "Covering every critical layer of your technology stack.",
+    scopeItem1Title: "Web3 Security Audits",
+    scopeItem1Desc: "In-depth code audits for Smart Contracts, dApps, and blockchain protocols to ensure asset security and logical correctness.",
+    scopeItem2Title: "Mobile & Endpoint Security",
+    scopeItem2Desc: "Penetration testing and system hardening for major operating systems including iOS, Android, and macOS.",
+    scopeItem3Title: "Web App & API Penetration Testing",
+    scopeItem3Desc: "Simulating real-world attacks to comprehensively test for vulnerabilities in your web applications and APIs, from OWASP Top 10 to business logic flaws.",
+    processTitle: "Our Audit Process",
+    processDesc: "Rigorous and transparent to ensure the highest quality delivery.",
+    processStep1Title: "1. Scoping & Kick-off",
+    processStep1Desc: "We work with you to define audit objectives, scope, and timelines, ensuring we fully understand your business context.",
+    processStep2Title: "2. In-depth Analysis & Testing",
+    processStep2Desc: "Combining automated tools with expert manual testing, we conduct thorough static and dynamic analysis to uncover vulnerabilities.",
+    processStep3Title: "3. Reporting & Remediation Advice",
+    processStep3Desc: "We provide a detailed, clear audit report with risk ratings, technical details, and actionable remediation plans.",
+    processStep4Title: "4. Verification & Retesting",
+    processStep4Desc: "After you've implemented fixes, we perform a complimentary retest to ensure all identified vulnerabilities have been properly resolved.",
+    finalCtaTitle: "Ready to uncover the hidden risks in your system?",
+    finalCtaButton: "Request a Free Assessment",
+  },
+  zh: {
+    pageTitle: "安全评估与审计",
+    heroTitle: "深度安全评估与审计",
+    heroDesc: "在上线之前，获得对您系统安全状况的全面、清晰的了解。我们深入代码和架构，发现被忽视的风险，提供可执行的修复建议。",
+    heroCta: "预约咨询",
+    scopeTitle: "我们的审计范围",
+    scopeDesc: "覆盖您技术栈的每一个关键层面。",
+    scopeItem1Title: "Web3 安全审计",
+    scopeItem1Desc: "针对智能合约、dApps和区块链协议的深度代码审计，确保资产安全与逻辑正确。",
+    scopeItem2Title: "移动端与终端安全",
+    scopeItem2Desc: "覆盖iOS、Android等主流操作系统，进行应用渗透测试、代码审查与系统加固。",
+    scopeItem3Title: "Web应用与API渗透测试",
+    scopeItem3Desc: "模拟真实攻击，全面检测您的Web应用和API的安全漏洞，从OWASP Top 10到业务逻辑缺陷。",
+    processTitle: "我们的审计流程",
+    processDesc: "严谨、透明，确保最高质量的交付。",
+    processStep1Title: "1. 范围确认与启动",
+    processStep1Desc: "与您共同定义审计目标、范围和时间表，确保我们完全理解您的业务上下文。",
+    processStep2Title: "2. 深度分析与测试",
+    processStep2Desc: "结合自动化工具与专家手工测试，进行全面的静态与动态分析，深入挖掘漏洞。",
+    processStep3Title: "3. 报告与修复建议",
+    processStep3Desc: "提供详细、清晰的审计报告，包含风险评级、技术细节和可操作的修复方案。",
+    processStep4Title: "4. 修复验证与复测",
+    processStep4Desc: "在您完成修复后，我们进行免费的复测，确保所有已发现的漏洞都已得到妥善解决。",
+    finalCtaTitle: "准备好发现您系统中的潜在风险了吗？",
+    finalCtaButton: "获取免费评估",
+  }
+};
+const t = content[lang];
+// === CONTENT END ===
+---
+
+<Layout title={t.pageTitle}>
+  <Container>
+    <!-- Hero Section -->
+    <div class="grid lg:grid-cols-2 place-items-center gap-12 pt-16 pb-8 md:pt-24 md:pb-16">
+      <div class="py-6 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4">{t.heroTitle}</h1>
+        <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">{t.heroDesc}</p>
+        <Link href={`/${lang}/contact`} size="lg">{t.heroCta}</Link>
+      </div>
+      <div class="hidden lg:block">
+        <Icon name="mdi:shield-check-outline" class="w-80 h-80 text-indigo-200 mx-auto" />
+      </div>
+    </div>
+
+    <!-- What We Audit Section -->
+    <Sectionhead class="mt-16 text-center">
+      <Fragment slot="title">{t.scopeTitle}</Fragment>
+      <Fragment slot="desc">{t.scopeDesc}</Fragment>
+    </Sectionhead>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:ethereum" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.scopeItem1Title}</h3>
+        <p class="text-slate-600">{t.scopeItem1Desc}</p>
+      </div>
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:cellphone-link" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.scopeItem2Title}</h3>
+        <p class="text-slate-600">{t.scopeItem2Desc}</p>
+      </div>
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:api" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.scopeItem3Title}</h3>
+        <p class="text-slate-600">{t.scopeItem3Desc}</p>
+      </div>
+    </div>
+
+    <!-- Our Process Section -->
+    <Sectionhead class="mt-24 text-center">
+      <Fragment slot="title">{t.processTitle}</Fragment>
+      <Fragment slot="desc">{t.processDesc}</Fragment>
+    </Sectionhead>
+    <div class="mt-12 max-w-3xl mx-auto">
+      <div class="space-y-8 border-l-2 border-dashed border-slate-300 pl-8">
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep1Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep1Desc}</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep2Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep2Desc}</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep3Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep3Desc}</p>
+        </div>
+         <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep4Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep4Desc}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="text-center mt-24 py-16 bg-slate-50 rounded-lg">
+      <h2 class="text-3xl font-bold mb-4">{t.finalCtaTitle}</h2>
+      <Link href={`/${lang}/contact`} size="lg" class="mt-4">{t.finalCtaButton}</Link>
+    </div>
+  </Container>
+</Layout>

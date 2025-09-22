@@ -1,0 +1,62 @@
+---
+// src/components/LanguageSwitcher.astro
+
+const { pathname } = Astro.url;
+const currentLocale = Astro.currentLocale;
+
+
+
+const isBlogPage = pathname.startsWith('/blog') || 
+                   pathname.startsWith(`/${currentLocale}/blog`) ||
+                   pathname.startsWith(`/${currentLocale}/tags`) ||
+                   pathname.startsWith(`/${currentLocale}/category`) ||
+                   pathname.startsWith('/contact') ||
+                   pathname.startsWith('/about');
+
+
+
+// 计算出不带语言前缀的基础路径
+// 例如: /en/sas -> /sas
+//       /zh/about -> /about
+//       /en -> / (处理首页的情况)
+const basePath = pathname.replace(/^\/(en|zh)/, "") || "/";
+
+// 生成目标语言的路径
+const targetLocale = currentLocale === 'en' ? 'zh' : 'en';
+const targetPath = `/${targetLocale}${basePath === '/' ? '' : basePath}`;
+
+// 定义要显示的文本
+const buttonText = currentLocale === 'en' ? '切换到中文' : 'Switch to English';
+---
+
+<!-- <a 
+  href={targetPath} 
+  class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>
+  {buttonText}
+</a> -->
+
+<!-- 如果您更喜欢两个并排的链接，而不是单个切换按钮，可以使用下面的代码 -->
+{!isBlogPage && (
+<div class="flex items-center gap-2 text-sm">
+  <a 
+    href={`/en${basePath === '/' ? '' : basePath}`} 
+    class:list={[
+      "hover:text-indigo-600 transition-colors",
+      currentLocale === 'en' && "font-bold text-indigo-600 pointer-events-none"
+    ]}
+  >
+    English
+  </a>
+  <span class="text-gray-300">|</span>
+  <a 
+    href={`/zh${basePath === '/' ? '' : basePath}`} 
+    class:list={[
+      "hover:text-indigo-600 transition-colors",
+      currentLocale === 'zh' && "font-bold text-indigo-600 pointer-events-none"
+    ]}
+  >
+    中文
+  </a>
+</div>
+)}

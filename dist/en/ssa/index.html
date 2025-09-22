@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/sst.svg"><meta name="generator" content="Astro v5.13.7"><!-- <link rel="preload" as="image" href={src} alt="Hero" /> --><title>Strategic Security Advisory | Shuffle Team</title><link rel="canonical" href="https://astroship.web3templates.com/en/ssa/"><meta name="description" content="Shuffle Team combines elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business."><meta name="robots" content="index, follow"><meta property="og:title" content="Shuffle Team"><meta property="og:type" content="website"><meta property="og:image" content="https://astroship.web3templates.com/sst.png"><meta property="og:url" content="https://astroship.web3templates.com/en/ssa/"><meta property="og:image:url" content="https://astroship.web3templates.com/sst.png"><meta property="og:image:alt" content="ShuffleTeam Homepage Screenshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@web3templates"><meta name="twitter:creator" content="@wugedbl"><link rel="stylesheet" href="/_astro/about.CGd3VL5k.css"></head> <body> <div class="max-w-(--breakpoint-xl) mx-auto px-5">  <header class="flex flex-col lg:flex-row justify-between items-center my-5">  <div class="flex w-full lg:w-auto items-center justify-between"> <a href="/" class="text-lg"><span class="font-bold text-slate-800">Shuffle</span><span class="text-slate-500">Team</span> </a> <div class="block lg:hidden"> <button id="astronav-menu" aria-label="Toggle Menu">  <svg fill="currentColor" class="w-4 h-4 text-gray-800" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <title>Toggle Menu</title> <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path> <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path> </svg>  </button> </div> </div> <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">  <ul class="flex flex-col lg:flex-row lg:gap-3"> <li class="relative"> <menu class="astronav-dropdown group" aria-expanded="false"> <button class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900"> <span>Services</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-0.5 group-open:rotate-180"> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path> </svg> </button> <div class="astronav-dropdown dropdown-toggle hidden" aria-expanded="false">  <div class="lg:absolute w-full lg:w-66 z-10 lg:left-0 origin-top-left"> <div class="px-2 py-1.5 lg:bg-white lg:rounded-md lg:shadow-lg lg:border flex flex-col gap-1"> <a href="/en/sas" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Security Assessments &amp; Audits </a><a href="/en/csf" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Continuous Security &amp; Fuzzing </a><a href="/en/ssa" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Strategic Security Advisory </a> </div> </div>  </div> </menu> </li><li> <a href="/blog" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Blog</span>  </a> </li><li> <a href="/about" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> About</span>  </a> </li><li> <a href="/contact" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Contact</span>  </a> </li> </ul>   </nav>  <script>(function(){const closeOnClick = false;
+
+["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+  document.addEventListener(event, addListeners);
+});
+
+// Function to clone and replace elements
+function cloneAndReplace(element) {
+  const clone = element.cloneNode(true);
+  element.parentNode.replaceChild(clone, element);
+}
+
+function addListeners() {
+  // Clean up existing listeners
+  const oldMenuButton = document.getElementById("astronav-menu");
+  if (oldMenuButton) {
+    cloneAndReplace(oldMenuButton);
+  }
+
+  const oldDropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  oldDropdownMenus.forEach((menu) => {
+    cloneAndReplace(menu);
+  });
+
+  // Mobile nav toggle
+  const menuButton = document.getElementById("astronav-menu");
+  menuButton && menuButton.addEventListener("click", toggleMobileNav);
+
+  // Dropdown menus
+  const dropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  dropdownMenus.forEach((menu) => {
+    const button = menu.querySelector("button");
+    button &&
+      button.addEventListener("click", (event) =>
+        toggleDropdownMenu(event, menu, dropdownMenus)
+      );
+
+    // Handle Submenu Dropdowns
+    const dropDownSubmenus = menu.querySelectorAll(
+      ".astronav-dropdown-submenu"
+    );
+
+    dropDownSubmenus.forEach((submenu) => {
+      const submenuButton = submenu.querySelector("button");
+      submenuButton &&
+        submenuButton.addEventListener("click", (event) => {
+          event.stopImmediatePropagation();
+          toggleSubmenuDropdown(event, submenu);
+        });
+    });
+  });
+
+  // Clicking away from dropdown will remove the dropdown class
+  document.addEventListener("click", closeAllDropdowns);
+
+  if (closeOnClick) {
+    handleCloseOnClick();
+  }
+}
+
+function toggleMobileNav() {
+  [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+function toggleDropdownMenu(event, menu, dropdownMenus) {
+  toggleMenu(menu);
+
+  // Close one dropdown when selecting another
+  Array.from(dropdownMenus)
+    .filter((el) => el !== menu && !menu.contains(el))
+    .forEach(closeMenu);
+
+  event.stopPropagation();
+}
+
+function toggleSubmenuDropdown(event, submenu) {
+  event.stopPropagation();
+  toggleMenu(submenu);
+
+  // Close sibling submenus at the same nesting level
+  const siblingSubmenus = submenu
+    .closest(".astronav-dropdown")
+    .querySelectorAll(".astronav-dropdown-submenu");
+  Array.from(siblingSubmenus)
+    .filter((el) => el !== submenu && !submenu.contains(el))
+    .forEach(closeMenu);
+}
+
+function closeAllDropdowns(event) {
+  const dropdownMenus = document.querySelectorAll(".dropdown-toggle");
+  const dropdownParent = document.querySelectorAll(
+    ".astronav-dropdown, .astronav-dropdown-submenu"
+  );
+  const isButtonInsideDropdown = [
+    ...document.querySelectorAll(
+      `.astronav-dropdown button, .astronav-dropdown label, .astronav-dropdown input,
+	  .astronav-dropdown-submenu button, .astronav-dropdown-submenu label, .astronav-dropdown-submenu input,
+	  #astronav-menu`
+    ),
+  ].some((button) => button.contains(event.target));
+  if (!isButtonInsideDropdown) {
+    dropdownMenus.forEach((d) => {
+      // console.log("I ran", d);
+      // if (!d.contains(event.target)) {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.classList.add("hidden");
+      // }
+    });
+    dropdownParent.forEach((d) => {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.setAttribute("aria-expanded", "false");
+    });
+  }
+}
+
+function toggleMenu(menu) {
+  menu.classList.toggle("open");
+  const expanded = menu.getAttribute("aria-expanded") === "true";
+  menu.setAttribute("aria-expanded", expanded ? "false" : "true");
+  menu.hasAttribute("open")
+    ? menu.removeAttribute("open")
+    : menu.setAttribute("open", "");
+
+  const dropdownToggle = menu.querySelector(".dropdown-toggle");
+  const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+  dropdownToggle.classList.toggle("hidden");
+  dropdownToggle.setAttribute(
+    "aria-expanded",
+    dropdownExpanded === "true" ? "false" : "true"
+  );
+}
+
+function closeMenu(menu) {
+  // console.log("closing", menu);
+  menu.classList.remove("open");
+  menu.removeAttribute("open");
+  menu.setAttribute("aria-expanded", "false");
+  const dropdownToggles = menu.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    toggle.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function handleCloseOnClick() {
+  const navMenuItems = document.querySelector(".astronav-items");
+  const navToggle = document.getElementById("astronav-menu");
+  const navLink = navMenuItems && navMenuItems.querySelectorAll("a");
+
+  const MenuIcons = navToggle.querySelectorAll(".astronav-toggle");
+
+  navLink &&
+    navLink.forEach((item) => {
+      item.addEventListener("click", () => {
+        navMenuItems?.classList.add("hidden");
+        MenuIcons.forEach((el) => {
+          el.classList.toggle("hidden");
+        });
+      });
+    });
+}
+})();</script> <div slot="actions"> <!-- <a 
+  href={targetPath} 
+  class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>
+  {buttonText}
+</a> --><!-- 如果您更喜欢两个并排的链接，而不是单个切换按钮，可以使用下面的代码 --><div class="flex items-center gap-2 text-sm"><a href="/en/ssa/" class="hover:text-indigo-600 transition-colors font-bold text-indigo-600 pointer-events-none">
+English
+</a><span class="text-gray-300">|</span><a href="/zh/ssa/" class="hover:text-indigo-600 transition-colors">
+中文
+</a></div> </div> <!-- <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#">Log in</a>
+        <Link href="#" size="md">Sign up</Link>
+      </div>
+    </div> --> </header>  </div>  <div class="max-w-(--breakpoint-xl) mx-auto px-5">   <div class="grid lg:grid-cols-2 place-items-center gap-12 pt-16 pb-8 md:pt-24 md:pb-16"> <div class="py-6 text-center lg:text-left"> <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4">Strategic Security Advisory</h1> <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">Go beyond point-in-time fixes. We act as your long-term partner to help you build a comprehensive, resilient security strategy, architecture, and culture, solving problems from the top down.</p> <a href="/en/contact" class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent">Consult Our Team </a> </div> <div class="hidden lg:block"> <svg width="1em" height="1em" class="w-80 h-80 text-indigo-200 mx-auto" data-icon="mdi:chess-king">   <symbol id="ai:mdi:chess-king" viewBox="0 0 24 24"><path fill="currentColor" d="M19 22H5v-2h14zm-2-12c-1.42 0-2.74.77-3.45 2H13V7h3V5h-3V2h-2v3H8v2h3v5h-.55C9.35 10.09 6.9 9.43 5 10.54A4.013 4.013 0 0 0 3.5 16c.74 1.24 2.07 2 3.5 2h10a4 4 0 0 0 4-4a4 4 0 0 0-4-4"/></symbol><use href="#ai:mdi:chess-king"></use>  </svg> </div> </div>  <div class="mt-16 text-center"> <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight"> Our Strategic Value </h1> <p class="text-lg mt-4 text-slate-600"> Becoming your most trusted security think tank. </p> </div> <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"> <div class="p-8 border rounded-lg"> <svg width="1em" height="1em" class="w-10 h-10 text-indigo-600 mb-4" data-icon="mdi:lightbulb-on-outline">   <symbol id="ai:mdi:lightbulb-on-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14l-1.42 1.41L3.5 4.93zm12.03 2.13l2.12-2.13l1.43 1.43l-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4a4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></symbol><use href="#ai:mdi:lightbulb-on-outline"></use>  </svg> <h3 class="text-xl font-bold mb-2">Expert Security Consulting</h3> <p class="text-slate-600">Providing holistic expert advice on security architecture design, threat modeling, incident response planning, and compliance.</p> </div> <div class="p-8 border rounded-lg"> <svg width="1em" height="1em" class="w-10 h-10 text-indigo-600 mb-4" data-icon="mdi:tools">   <symbol id="ai:mdi:tools" viewBox="0 0 24 24"><path fill="currentColor" d="m21.71 20.29l-1.42 1.42a1 1 0 0 1-1.41 0L7 9.85A3.8 3.8 0 0 1 6 10a4 4 0 0 1-3.78-5.3l2.54 2.54l.53-.53l1.42-1.42l.53-.53L4.7 2.22A4 4 0 0 1 10 6a3.8 3.8 0 0 1-.15 1l11.86 11.88a1 1 0 0 1 0 1.41M2.29 18.88a1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41 0l5.47-5.46l-2.83-2.83M20 2l-4 2v2l-2.17 2.17l2 2L18 8h2l2-4Z"/></symbol><use href="#ai:mdi:tools"></use>  </svg> <h3 class="text-xl font-bold mb-2">Custom Security Solutions</h3> <p class="text-slate-600">Designing and developing bespoke security tools, protocols, and solutions for your unique business challenges.</p> </div> <div class="p-8 border rounded-lg"> <svg width="1em" height="1em" class="w-10 h-10 text-indigo-600 mb-4" data-icon="mdi:school-outline">   <symbol id="ai:mdi:school-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72L5.18 9L12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></symbol><use href="#ai:mdi:school-outline"></use>  </svg> <h3 class="text-xl font-bold mb-2">Security Training &amp; Awareness</h3> <p class="text-slate-600">Delivering cutting-edge, hands-on security training for your development, operations, and management teams to raise the entire organization&#39;s security posture.</p> </div> </div>  <div class="mt-16 text-center"> <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight"> Our Engagement Model </h1> <p class="text-lg mt-4 text-slate-600"> Flexible and in-depth, growing with you. </p> </div> <div class="mt-12 max-w-3xl mx-auto"> <div class="space-y-8 border-l-2 border-dashed border-slate-300 pl-8"> <div class="relative"> <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div> <h3 class="font-bold text-xl">1. Deep Dive &amp; Assessment</h3> <p class="text-slate-600 mt-1">Gaining a deep understanding of your business goals, technical architecture, and existing processes to assess your current security maturity.</p> </div> <div class="relative"> <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div> <h3 class="font-bold text-xl">2. Strategy &amp; Roadmap Design</h3> <p class="text-slate-600 mt-1">Tailoring a clear, actionable security strategy and a phased implementation roadmap for you.</p> </div> <div class="relative"> <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div> <h3 class="font-bold text-xl">3. Implementation Support &amp; Training</h3> <p class="text-slate-600 mt-1">We don&#39;t just provide a plan; we assist your team in its execution and ensure knowledge transfer through training.</p> </div> <div class="relative"> <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div> <h3 class="font-bold text-xl">4. Continuous Review &amp; Optimization</h3> <p class="text-slate-600 mt-1">As your long-term partner, we regularly review and adjust the security strategy to adapt to business and threat landscape changes.</p> </div> </div> </div>  <div class="text-center mt-24 py-16 bg-slate-50 rounded-lg"> <h2 class="text-3xl font-bold mb-4">Ready to build a truly resilient security program?</h2> <a href="/en/contact" class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent mt-4">Start a Strategic Conversation </a> </div>  </div>  <footer class="my-20"> <p class="text-center text-sm text-slate-500">
+Copyright © 2025 ShuffleTeam. All rights reserved.
+</p> <!--
+    Can we ask you a favor 🙏
+    Please keep this backlink on your website if possible.
+    or Purchase a commercial license from https://web3templates.com
+
+  <p class="text-center text-xs text-slate-500 mt-1">
+    Made by <a
+      href="https://web3templates.com"
+      target="_blank"
+      rel="noopener"
+      class="hover:underline">
+      Web3Templates
+    </a>
+  </p>
+  --> </footer>  </body> </html>

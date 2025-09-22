@@ -1,0 +1,132 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+// === CONTENT START ===
+const lang = Astro.currentLocale === 'zh' ? 'zh' : 'en';
+const content = {
+  en: {
+    pageTitle: "Continuous Security & Fuzzing",
+    heroTitle: "Continuous Security & Intelligent Fuzzing",
+    heroDesc: "Transform security from a one-time event into a continuous, automated process. We leverage advanced fuzzing techniques to proactively discover deep vulnerabilities that traditional scans miss.",
+    heroCta: "Learn About Our Tools",
+    offeringsTitle: "Our Core Offerings",
+    offeringsDesc: "Build a security defense system that evolves with you.",
+    offering1Title: "AI-Enhanced Fuzzing",
+    offering1Desc: "Utilizing our proprietary, AI-driven fuzzing framework to perform large-scale, deep automated vulnerability discovery on your codebase.",
+    offering2Title: "DevSecOps Integration Consulting",
+    offering2Desc: "We help you seamlessly integrate automated security tools like SAST and DAST into your CI/CD pipeline.",
+    offering3Title: "Proactive Threat Hunting",
+    offering3Desc: "Beyond automation, our experts continuously analyze findings from our tools to proactively hunt for potential attack vectors and anomalous patterns.",
+    processTitle: "How We Collaborate",
+    processDesc: "Acting as a seamless extension of your development team.",
+    processStep1Title: "1. Integration & Configuration",
+    processStep1Desc: "We integrate our fuzzing and scanning tools into your codebase and CI/CD pipeline with custom configurations.",
+    processStep2Title: "2. Continuous Analysis & Monitoring",
+    processStep2Desc: "Our systems analyze your code 24/7, alerting you immediately when a potential issue is discovered.",
+    processStep3Title: "3. Triage & Reporting",
+    processStep3Desc: "Our experts validate and prioritize automated findings, ensuring you only receive high-value, actionable alerts.",
+    finalCtaTitle: "Ready to automate your security defense?",
+    finalCtaButton: "Get a Demo",
+  },
+  zh: {
+    pageTitle: "持续安全与模糊测试",
+    heroTitle: "持续安全与智能模糊测试",
+    heroDesc: "将安全从一次性事件转变为一个持续的、自动化的流程。我们利用先进的模糊测试技术，主动发现传统扫描无法触及的深层漏洞。",
+    heroCta: "了解我们的工具",
+    offeringsTitle: "我们的核心服务",
+    offeringsDesc: "构建一个能够自我进化的安全防御体系。",
+    offering1Title: "AI增强的模糊测试",
+    offering1Desc: "利用我们自研的、由AI驱动的模糊测试框架，对您的代码进行大规模、深度的自动化漏洞挖掘。",
+    offering2Title: "DevSecOps 集成咨询",
+    offering2Desc: "帮助您将静态分析(SAST)、动态分析(DAST)等自动化安全工具无缝集成到您的CI/CD流程中。",
+    offering3Title: "主动威胁狩猎",
+    offering3Desc: "不仅仅是自动化，我们的专家团队会持续分析工具的发现，主动寻找潜在的攻击向量与异常模式。",
+    processTitle: "我们的协作模式",
+    processDesc: "成为您开发团队的无缝延伸。",
+    processStep1Title: "1. 集成与配置",
+    processStep1Desc: "我们将模糊测试和扫描工具接入您的代码库和CI/CD管道，进行定制化配置。",
+    processStep2Title: "2. 持续分析与监控",
+    processStep2Desc: "我们的系统7x24小时不间断地对您的代码进行分析，一旦发现潜在问题立即告警。",
+    processStep3Title: "3. 优先级排序与报告",
+    processStep3Desc: "我们的专家会对自动化发现进行验证和优先级排序，确保您只收到高价值、可操作的警报。",
+    finalCtaTitle: "准备好将您的安全防御自动化了吗？",
+    finalCtaButton: "获取产品演示",
+  }
+};
+const t = content[lang];
+// === CONTENT END ===
+---
+
+<Layout title={t.pageTitle}>
+  <Container>
+    <!-- Hero Section -->
+    <div class="grid lg:grid-cols-2 place-items-center gap-12 pt-16 pb-8 md:pt-24 md:pb-16">
+      <div class="py-6 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4">{t.heroTitle}</h1>
+        <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">{t.heroDesc}</p>
+        <Link href={`/${lang}/contact`} size="lg">{t.heroCta}</Link>
+      </div>
+      <div class="hidden lg:block">
+        <Icon name="mdi:robot-industrial" class="w-80 h-80 text-indigo-200 mx-auto" />
+      </div>
+    </div>
+
+    <!-- Our Core Offerings Section -->
+    <Sectionhead class="mt-16 text-center">
+      <Fragment slot="title">{t.offeringsTitle}</Fragment>
+      <Fragment slot="desc">{t.offeringsDesc}</Fragment>
+    </Sectionhead>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:bug-check-outline" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.offering1Title}</h3>
+        <p class="text-slate-600">{t.offering1Desc}</p>
+      </div>
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:source-commit" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.offering2Title}</h3>
+        <p class="text-slate-600">{t.offering2Desc}</p>
+      </div>
+      <div class="p-8 border rounded-lg">
+        <Icon name="mdi:radar" class="w-10 h-10 text-indigo-600 mb-4" />
+        <h3 class="text-xl font-bold mb-2">{t.offering3Title}</h3>
+        <p class="text-slate-600">{t.offering3Desc}</p>
+      </div>
+    </div>
+
+    <!-- How We Collaborate Section -->
+    <Sectionhead class="mt-24 text-center">
+      <Fragment slot="title">{t.processTitle}</Fragment>
+      <Fragment slot="desc">{t.processDesc}</Fragment>
+    </Sectionhead>
+     <div class="mt-12 max-w-3xl mx-auto">
+      <div class="space-y-8 border-l-2 border-dashed border-slate-300 pl-8">
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep1Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep1Desc}</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep2Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep2Desc}</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[38px] top-1 w-4 h-4 bg-indigo-600 rounded-full"></div>
+          <h3 class="font-bold text-xl">{t.processStep3Title}</h3>
+          <p class="text-slate-600 mt-1">{t.processStep3Desc}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="text-center mt-24 py-16 bg-slate-50 rounded-lg">
+      <h2 class="text-3xl font-bold mb-4">{t.finalCtaTitle}</h2>
+      <Link href={`/${lang}/contact`} size="lg" class="mt-4">{t.finalCtaButton}</Link>
+    </div>
+  </Container>
+</Layout>

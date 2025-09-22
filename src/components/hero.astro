@@ -1,0 +1,82 @@
+---
+import { Picture } from "astro:assets";
+// import heroImage from "assets/hero.png";
+import heroImage from "assets/shuffle2.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+// === START: Language Content Management ===
+const lang = Astro.currentLocale === 'zh' ? 'zh' : 'en';
+
+const content = {
+  en: {
+    altText: "Shuffle Team in the air",
+    headline: "Human Insight x Machine Efficiency.",
+    paragraph: "We combine elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business.",
+    cta1_text: "Explore Our Approach",
+    cta2_text: "Schedule a Consultation",
+  },
+  zh: {
+    altText: "Shuffle 团队在空中协作的图片",
+    headline: "人类智慧 x 机器效率。",
+    paragraph: "我们融合了顶尖专家的洞察力与AI的强大能力，以创造卓越的安全成果。我们的安全审计与工具正是基于这种协同作用，为您的业务提供更深入的洞察和更高的效率。",
+    cta1_text: "了解我们的方法",
+    cta2_text: "预约咨询",
+  }
+};
+
+const t = content[lang];
+// === END: Language Content Management ===
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={heroImage}
+      alt={t.altText}
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+        <!-- Human Insight x Machine Efficiency. -->
+      {t.headline}
+        <!-- Find more, faster. -->
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      <!-- Astroship is a starter template for startups, marketing websites & landing
+      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
+      create any website with this starter. -->
+      <!-- We combine elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business. -->
+      {t.paragraph}
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="#"
+        href="/about"
+        target="_blank"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        <!-- <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" /> -->
+          <!-- Explore Our Approach -->
+        {t.cta1_text}
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="/contact"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <!-- <Icon class="text-black w-4 h-4" name="bx:bxl-github" /> -->
+         <!-- Schedule a Consultation -->
+        {t.cta2_text}
+      </Link>
+    </div>
+  </div>
+</main>

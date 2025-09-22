@@ -1,0 +1,68 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "AI-Augmented Expertise",
+    description:
+      "We merge expert intuition with AI-powered analysis to find deep vulnerabilities that automated tools and human-only approaches miss.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Full-Stack Security Coverage",
+    description:
+      "From Web3 to mobile and desktop applications, our team has the specialized knowledge to secure your specific technology stack.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Actionable Intelligence, Not Noise",
+    description:
+      "We distill complex findings into prioritized, actionable steps, empowering your team to fix what matters most, fast.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Offensive-Minded Defense",
+    description:
+      "We think and act like attackers, using advanced techniques like fuzzing to anticipate and neutralize threats before they emerge.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Solutions Beyond a Report",
+    description:
+      "Our partnership extends beyond the final report. We provide ongoing advisory and training, acting as an extension of your team's security capabilities.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Built for Modern Development",
+    description:
+      "Our services and tools are designed to integrate seamlessly into your DevSecOps workflow, making security an accelerator for innovation, not a roadblock.",
+    icon: "bx:bxs-briefcase",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    The Complete Framework for Intelligent Defense
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Our approach provides a full spectrum of security solutions, ready for any challenge. It's built on the proven, offensive-minded methodologies of elite security experts and amplified by our proprietary AI-powered analysis.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

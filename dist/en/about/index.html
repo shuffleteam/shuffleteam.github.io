@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/sst.svg"><meta name="generator" content="Astro v5.13.7"><!-- <link rel="preload" as="image" href={src} alt="Hero" /> --><title>About | Shuffle Team</title><link rel="canonical" href="https://astroship.web3templates.com/en/about/"><meta name="description" content="Shuffle Team combines elite human expertise with the power of AI to achieve superior security outcomes. Our security audits and tools are built on this synergy, delivering deeper insights and greater efficiency for your business."><meta name="robots" content="index, follow"><meta property="og:title" content="Shuffle Team"><meta property="og:type" content="website"><meta property="og:image" content="https://astroship.web3templates.com/sst.png"><meta property="og:url" content="https://astroship.web3templates.com/en/about/"><meta property="og:image:url" content="https://astroship.web3templates.com/sst.png"><meta property="og:image:alt" content="ShuffleTeam Homepage Screenshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@web3templates"><meta name="twitter:creator" content="@wugedbl"><link rel="stylesheet" href="/_astro/about.CGd3VL5k.css"></head> <body> <div class="max-w-(--breakpoint-xl) mx-auto px-5">  <header class="flex flex-col lg:flex-row justify-between items-center my-5">  <div class="flex w-full lg:w-auto items-center justify-between"> <a href="/" class="text-lg"><span class="font-bold text-slate-800">Shuffle</span><span class="text-slate-500">Team</span> </a> <div class="block lg:hidden"> <button id="astronav-menu" aria-label="Toggle Menu">  <svg fill="currentColor" class="w-4 h-4 text-gray-800" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <title>Toggle Menu</title> <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path> <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path> </svg>  </button> </div> </div> <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">  <ul class="flex flex-col lg:flex-row lg:gap-3"> <li class="relative"> <menu class="astronav-dropdown group" aria-expanded="false"> <button class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900"> <span>Services</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-0.5 group-open:rotate-180"> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path> </svg> </button> <div class="astronav-dropdown dropdown-toggle hidden" aria-expanded="false">  <div class="lg:absolute w-full lg:w-66 z-10 lg:left-0 origin-top-left"> <div class="px-2 py-1.5 lg:bg-white lg:rounded-md lg:shadow-lg lg:border flex flex-col gap-1"> <a href="/en/sas" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Security Assessments &amp; Audits </a><a href="/en/csf" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Continuous Security &amp; Fuzzing </a><a href="/en/ssa" class="block px-1 py-2 text-gray-600 hover:text-white hover:bg-indigo-600 rounded-md transition-colors"> Strategic Security Advisory </a> </div> </div>  </div> </menu> </li><li> <a href="/blog" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Blog</span>  </a> </li><li> <a href="/about" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> About</span>  </a> </li><li> <a href="/contact" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Contact</span>  </a> </li> </ul>   </nav>  <script>(function(){const closeOnClick = false;
+
+["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+  document.addEventListener(event, addListeners);
+});
+
+// Function to clone and replace elements
+function cloneAndReplace(element) {
+  const clone = element.cloneNode(true);
+  element.parentNode.replaceChild(clone, element);
+}
+
+function addListeners() {
+  // Clean up existing listeners
+  const oldMenuButton = document.getElementById("astronav-menu");
+  if (oldMenuButton) {
+    cloneAndReplace(oldMenuButton);
+  }
+
+  const oldDropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  oldDropdownMenus.forEach((menu) => {
+    cloneAndReplace(menu);
+  });
+
+  // Mobile nav toggle
+  const menuButton = document.getElementById("astronav-menu");
+  menuButton && menuButton.addEventListener("click", toggleMobileNav);
+
+  // Dropdown menus
+  const dropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  dropdownMenus.forEach((menu) => {
+    const button = menu.querySelector("button");
+    button &&
+      button.addEventListener("click", (event) =>
+        toggleDropdownMenu(event, menu, dropdownMenus)
+      );
+
+    // Handle Submenu Dropdowns
+    const dropDownSubmenus = menu.querySelectorAll(
+      ".astronav-dropdown-submenu"
+    );
+
+    dropDownSubmenus.forEach((submenu) => {
+      const submenuButton = submenu.querySelector("button");
+      submenuButton &&
+        submenuButton.addEventListener("click", (event) => {
+          event.stopImmediatePropagation();
+          toggleSubmenuDropdown(event, submenu);
+        });
+    });
+  });
+
+  // Clicking away from dropdown will remove the dropdown class
+  document.addEventListener("click", closeAllDropdowns);
+
+  if (closeOnClick) {
+    handleCloseOnClick();
+  }
+}
+
+function toggleMobileNav() {
+  [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+function toggleDropdownMenu(event, menu, dropdownMenus) {
+  toggleMenu(menu);
+
+  // Close one dropdown when selecting another
+  Array.from(dropdownMenus)
+    .filter((el) => el !== menu && !menu.contains(el))
+    .forEach(closeMenu);
+
+  event.stopPropagation();
+}
+
+function toggleSubmenuDropdown(event, submenu) {
+  event.stopPropagation();
+  toggleMenu(submenu);
+
+  // Close sibling submenus at the same nesting level
+  const siblingSubmenus = submenu
+    .closest(".astronav-dropdown")
+    .querySelectorAll(".astronav-dropdown-submenu");
+  Array.from(siblingSubmenus)
+    .filter((el) => el !== submenu && !submenu.contains(el))
+    .forEach(closeMenu);
+}
+
+function closeAllDropdowns(event) {
+  const dropdownMenus = document.querySelectorAll(".dropdown-toggle");
+  const dropdownParent = document.querySelectorAll(
+    ".astronav-dropdown, .astronav-dropdown-submenu"
+  );
+  const isButtonInsideDropdown = [
+    ...document.querySelectorAll(
+      `.astronav-dropdown button, .astronav-dropdown label, .astronav-dropdown input,
+	  .astronav-dropdown-submenu button, .astronav-dropdown-submenu label, .astronav-dropdown-submenu input,
+	  #astronav-menu`
+    ),
+  ].some((button) => button.contains(event.target));
+  if (!isButtonInsideDropdown) {
+    dropdownMenus.forEach((d) => {
+      // console.log("I ran", d);
+      // if (!d.contains(event.target)) {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.classList.add("hidden");
+      // }
+    });
+    dropdownParent.forEach((d) => {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.setAttribute("aria-expanded", "false");
+    });
+  }
+}
+
+function toggleMenu(menu) {
+  menu.classList.toggle("open");
+  const expanded = menu.getAttribute("aria-expanded") === "true";
+  menu.setAttribute("aria-expanded", expanded ? "false" : "true");
+  menu.hasAttribute("open")
+    ? menu.removeAttribute("open")
+    : menu.setAttribute("open", "");
+
+  const dropdownToggle = menu.querySelector(".dropdown-toggle");
+  const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+  dropdownToggle.classList.toggle("hidden");
+  dropdownToggle.setAttribute(
+    "aria-expanded",
+    dropdownExpanded === "true" ? "false" : "true"
+  );
+}
+
+function closeMenu(menu) {
+  // console.log("closing", menu);
+  menu.classList.remove("open");
+  menu.removeAttribute("open");
+  menu.setAttribute("aria-expanded", "false");
+  const dropdownToggles = menu.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    toggle.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function handleCloseOnClick() {
+  const navMenuItems = document.querySelector(".astronav-items");
+  const navToggle = document.getElementById("astronav-menu");
+  const navLink = navMenuItems && navMenuItems.querySelectorAll("a");
+
+  const MenuIcons = navToggle.querySelectorAll(".astronav-toggle");
+
+  navLink &&
+    navLink.forEach((item) => {
+      item.addEventListener("click", () => {
+        navMenuItems?.classList.add("hidden");
+        MenuIcons.forEach((el) => {
+          el.classList.toggle("hidden");
+        });
+      });
+    });
+}
+})();</script> <div slot="actions"> <!-- <a 
+  href={targetPath} 
+  class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>
+  {buttonText}
+</a> --><!-- 如果您更喜欢两个并排的链接，而不是单个切换按钮，可以使用下面的代码 --><div class="flex items-center gap-2 text-sm"><a href="/en/about/" class="hover:text-indigo-600 transition-colors font-bold text-indigo-600 pointer-events-none">
+English
+</a><span class="text-gray-300">|</span><a href="/zh/about/" class="hover:text-indigo-600 transition-colors">
+中文
+</a></div> </div> <!-- <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#">Log in</a>
+        <Link href="#" size="md">Sign up</Link>
+      </div>
+    </div> --> </header>  </div>  <div class="max-w-(--breakpoint-xl) mx-auto px-5">  <div class="mt-16 text-center"> <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight"> About us </h1> <p class="text-lg mt-4 text-slate-600"> Evolve · Solve · Accelerate </p> </div> <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16"> <h2 class="font-bold text-3xl text-gray-800">
+Driving Progress, Engineered for Efficiency
+</h2> <p class="text-lg leading-relaxed text-slate-500">
+We are a team driven by constant progress. We deliver fundamental solutions by understanding the core of a problem, creating maximum value for our clients through radical efficiency.
+</p> </div>  <section class="py-16 md:py-24 bg-white"> <div class="container mx-auto px-4"> <div class="space-y-20 md:space-y-28"> <div class="grid lg:grid-cols-2 lg:gap-16 items-center">  <div class="relative"> <picture> <source srcset="/_astro/fuzzing.is5xD_RL_1nNCw0.webp 400w, /_astro/fuzzing.is5xD_RL_C4RoU.webp 800w" type="image/webp" sizes="(max-width: 1023px) 100vw, 800px">  <img src="/_astro/fuzzing.is5xD_RL_WBYvW.jpg" srcset="/_astro/fuzzing.is5xD_RL_br4Wi.jpg 400w, /_astro/fuzzing.is5xD_RL_ZzhF9M.jpg 800w" alt="An illustration of a security expert analyzing code on a large screen." sizes="(max-width: 1023px) 100vw, 800px" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="896" class="rounded-lg shadow-lg w-full"> </picture> </div>  <div class="mt-10 lg:mt-0"> <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"> In-Depth Security Audits </h2> <p class="text-lg text-slate-600 leading-relaxed mb-8"> We go beyond surface-level scans. Our experts manually review your code and architecture to uncover critical vulnerabilities that automated tools often miss, providing you with a clear and actionable report. </p>  <ul class="space-y-4"> <li class="flex items-start"> <div class="flex-shrink-0"> <svg width="1em" height="1em" class="w-6 h-6 text-indigo-600 mt-1" data-icon="mdi:code-tags-check">   <symbol id="ai:mdi:code-tags-check" viewBox="0 0 24 24"><path fill="currentColor" d="M6.59 3.41L2 8l4.59 4.6L8 11.18L4.82 8L8 4.82zm5.82 0L11 4.82L14.18 8L11 11.18l1.41 1.42L17 8zm9.18 8.18l-8.09 8.09L9.83 16l-1.41 1.41l5.08 5.09L23 13z"/></symbol><use href="#ai:mdi:code-tags-check"></use>  </svg> </div> <p class="ml-4 text-slate-600">Comprehensive code review for Web3, Mobile, and Web Apps.</p> </li><li class="flex items-start"> <div class="flex-shrink-0"> <svg width="1em" height="1em" class="w-6 h-6 text-indigo-600 mt-1" data-icon="mdi:file-document-outline">   <symbol id="ai:mdi:file-document-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2h7v5h5v11H6zm2 8v2h8v-2zm0 4v2h5v-2z"/></symbol><use href="#ai:mdi:file-document-outline"></use>  </svg> </div> <p class="ml-4 text-slate-600">Detailed reporting with prioritized, actionable remediation steps.</p> </li> </ul> </div> </div><div class="grid lg:grid-cols-2 lg:gap-16 items-center">  <div class="relative lg:order-last"> <picture> <source srcset="/_astro/audit.BIBXveuS_1e14Xc.webp 400w, /_astro/audit.BIBXveuS_Z1Nt12n.webp 800w" type="image/webp" sizes="(max-width: 1023px) 100vw, 800px">  <img src="/_astro/audit.BIBXveuS_1YLVTY.jpg" srcset="/_astro/audit.BIBXveuS_ZJ8gS3.jpg 400w, /_astro/audit.BIBXveuS_1iyKUj.jpg 800w" alt="An illustration of automated robots finding bugs in a complex system." sizes="(max-width: 1023px) 100vw, 800px" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="896" class="rounded-lg shadow-lg w-full"> </picture> </div>  <div class="mt-10 lg:mt-0"> <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"> Continuous Security with Intelligent Fuzzing </h2> <p class="text-lg text-slate-600 leading-relaxed mb-8"> Transform your security from a single event to an ongoing process. We deploy our proprietary, AI-enhanced fuzzing tools to continuously hunt for deep, complex bugs in your system, 24/7. </p>  <ul class="space-y-4"> <li class="flex items-start"> <div class="flex-shrink-0"> <svg width="1em" height="1em" class="w-6 h-6 text-indigo-600 mt-1" data-icon="mdi:robot-industrial">   <symbol id="ai:mdi:robot-industrial" viewBox="0 0 24 24"><path fill="currentColor" d="M18.41 4L16 6.41v.18L18.41 9H22v2h-4.41L16 9.41V12h-1a2 2 0 0 1-2-2V7.5H9.86c-.09.37-.24.72-.44 1.05L15.18 19H20a2 2 0 0 1 2 2v1H2v-1a2 2 0 0 1 2-2h6.61l-4.69-8.5a4.006 4.006 0 0 1-3.81-3A4 4 0 0 1 5 2.63c2.13-.55 4.31.73 4.86 2.87H13V3a2 2 0 0 1 2-2h1v2.59L17.59 2H22v2zM6 4.5a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2"/></symbol><use href="#ai:mdi:robot-industrial"></use>  </svg> </div> <p class="ml-4 text-slate-600">Automated, large-scale vulnerability discovery.</p> </li><li class="flex items-start"> <div class="flex-shrink-0"> <svg width="1em" height="1em" class="w-6 h-6 text-indigo-600 mt-1" data-icon="mdi:source-commit">   <symbol id="ai:mdi:source-commit" viewBox="0 0 24 24"><path fill="currentColor" d="M17 12a5 5 0 0 1-4 4.9V21h-2v-4.1a5 5 0 0 1 0-9.8V3h2v4.1a5 5 0 0 1 4 4.9m-5-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></symbol><use href="#ai:mdi:source-commit"></use>  </svg> </div> <p class="ml-4 text-slate-600">Seamless integration into your DevSecOps pipeline.</p> </li> </ul> </div> </div><div class="grid lg:grid-cols-2 lg:gap-16 items-center">  <div class="relative"> <picture> <source srcset="/_astro/advisory.BQqGusxN_1Bjzmi.webp 400w, /_astro/advisory.BQqGusxN_ZKvRxN.webp 800w" type="image/webp" sizes="(max-width: 1023px) 100vw, 800px">  <img src="/_astro/advisory.BQqGusxN_14ID5W.jpg" srcset="/_astro/advisory.BQqGusxN_Z4Jsx1.jpg 400w, /_astro/advisory.BQqGusxN_Z2rzUs7.jpg 800w" alt="An illustration of a team collaborating on a strategic security blueprint." sizes="(max-width: 1023px) 100vw, 800px" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="896" class="rounded-lg shadow-lg w-full"> </picture> </div>  <div class="mt-10 lg:mt-0"> <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"> Strategic Security Advisory </h2> <p class="text-lg text-slate-600 leading-relaxed mb-8"> We act as your long-term security partner, helping you design resilient systems, build a strong security culture, and make informed decisions to protect your business as it scales. </p>  <ul class="space-y-4"> <li class="flex items-start"> <div class="flex-shrink-0"> <svg width="1em" height="1em" class="w-6 h-6 text-indigo-600 mt-1" data-icon="mdi:lightbulb-on-outline">   <symbol id="ai:mdi:lightbulb-on-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14l-1.42 1.41L3.5 4.93zm12.03 2.13l2.12-2.13l1.43 1.43l-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4a4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></symbol><use href="#ai:mdi:lightbulb-on-outline"></use>  </svg> </div> <p class="ml-4 text-slate-600">Expert consulting on architecture, threat modeling, and more.</p> </li><li class="flex items-start"> <div class="flex-shrink-0"> <svg width="1em" height="1em" class="w-6 h-6 text-indigo-600 mt-1" data-icon="mdi:school-outline">   <symbol id="ai:mdi:school-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72L5.18 9L12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></symbol><use href="#ai:mdi:school-outline"></use>  </svg> </div> <p class="ml-4 text-slate-600">Customized security training and workshops for your team.</p> </li> </ul> </div> </div> </div> </div> </section>   </div>  <footer class="my-20"> <p class="text-center text-sm text-slate-500">
+Copyright © 2025 ShuffleTeam. All rights reserved.
+</p> <!--
+    Can we ask you a favor 🙏
+    Please keep this backlink on your website if possible.
+    or Purchase a commercial license from https://web3templates.com
+
+  <p class="text-center text-xs text-slate-500 mt-1">
+    Made by <a
+      href="https://web3templates.com"
+      target="_blank"
+      rel="noopener"
+      class="hover:underline">
+      Web3Templates
+    </a>
+  </p>
+  --> </footer>  </body> </html>

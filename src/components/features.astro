@@ -1,0 +1,110 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+// === START: Language Content Management ===
+const lang = Astro.currentLocale === 'zh' ? 'zh' : 'en';
+
+const content = {
+  en: {
+    mainTitle: "The Complete Framework for Intelligent Defense",
+    mainParagraph: "Our approach provides a full spectrum of security solutions, ready for any challenge. It's built on the proven, offensive-minded methodologies of elite security experts and amplified by our proprietary AI-powered analysis.",
+    features: [
+      {
+        title: "AI-Augmented Expertise",
+        description: "We merge expert intuition with AI-powered analysis to find deep vulnerabilities that automated tools and human-only approaches miss.",
+        icon: "bx:bxs-bot",
+      },
+      {
+        title: "Full-Stack Security Coverage",
+        description: "From Web3 to mobile and desktop applications, our team has the specialized knowledge to secure your specific technology stack.",
+        icon: "bx:bxs-window-alt",
+      },
+      {
+        title: "Actionable Intelligence, Not Noise",
+        description: "We distill complex findings into prioritized, actionable steps, empowering your team to fix what matters most, fast.",
+        icon: "bx:bxs-data",
+      },
+      {
+        title: "Offensive-Minded Defense",
+        description: "We think and act like attackers, using advanced techniques like fuzzing to anticipate and neutralize threats before they emerge.",
+        icon: "bx:bxs-user",
+      },
+      {
+        title: "Solutions Beyond a Report",
+        description: "Our partnership extends beyond the final report. We provide ongoing advisory and training, acting as an extension of your team's security capabilities.",
+        icon: "bx:bxs-file-find",
+      },
+      {
+        title: "Built for Modern Development",
+        description: "Our services and tools are designed to integrate seamlessly into your DevSecOps workflow, making security an accelerator for innovation, not a roadblock.",
+        icon: "bx:bxs-briefcase",
+      },
+    ]
+  },
+  zh: {
+    mainTitle: "构建智能防御的完整框架",
+    mainParagraph: "我们的方法提供了一整套应对任何挑战的安全解决方案。它建立在顶尖安全专家的实战方法论之上，并由我们专有的AI分析能力进行增强。",
+    features: [
+      {
+        title: "AI增强的专家技术",
+        description: "我们融合专家直觉与AI分析能力，发现自动化工具和纯人工方法都会错过的深层漏洞。",
+        icon: "bx:bxs-bot",
+      },
+      {
+        title: "全栈安全覆盖",
+        description: "从Web3到移动端和桌面应用，我们的团队拥有保护您特定技术栈所需的专业知识。",
+        icon: "bx:bxs-window-alt",
+      },
+      {
+        title: "可行的情报，而非噪音",
+        description: "我们将复杂的发现提炼为有优先级的、可执行的步骤，让您的团队能快速修复真正重要的问题。",
+        icon: "bx:bxs-data",
+      },
+      {
+        title: "进攻性防御思维",
+        description: "我们以攻击者的视角思考和行动，利用先进的模糊测试等技术，在威胁发生前就预见并消除它们。",
+        icon: "bx:bxs-user",
+      },
+      {
+        title: "不止于一份报告",
+        description: "我们的合作不止于交付报告。我们提供持续的咨询和培训，成为您团队安全能力的延伸。",
+        icon: "bx:bxs-file-find",
+      },
+      {
+        title: "为现代开发而生",
+        description: "我们的服务和工具旨在无缝集成到您的DevSecOps流程中，让安全成为创新的加速器，而非阻碍。",
+        icon: "bx:bxs-briefcase",
+      },
+    ]
+  }
+};
+
+const t = content[lang];
+// === END: Language Content Management ===
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    {t.mainTitle}
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    {t.mainParagraph}
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    t.features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
