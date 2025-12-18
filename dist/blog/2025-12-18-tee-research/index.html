@@ -175,27 +175,19 @@ function handleCloseOnClick() {
       </div>
     </div> --> </header>  </div>  <div class="max-w-(--breakpoint-xl) mx-auto px-5">  <div class="mx-auto max-w-3xl mt-14"> <span class="text-blue-400 uppercase tracking-wider text-sm font-medium"> research </span> <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight"> Bridging the Gap: Security World Vulnerability Discovery Across Diverse Chip Architectures </h1> <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap"> <span class="text-gray-400"> shuffle team </span> <span class="text-gray-400">•</span> <time class="text-gray-400" datetime="2025-12-18T03:00:00.000Z"> Thu Dec 18 2025 </time> <span class="text-gray-400 hidden md:block">•</span> <div class="w-full md:w-auto flex flex-wrap gap-3"> <span class="text-sm text-gray-500">#tee</span><span class="text-sm text-gray-500">#vulnerability</span><span class="text-sm text-gray-500">#chip architecture</span> </div> </div> </div> <div class="mx-auto prose prose-lg mt-6 max-w-3xl"> <h2 id="introduction">Introduction</h2>
 <p>In the modern mobile security landscape, the Trusted Execution Environment (TEE) is the “last bastion” protecting core privacy and cryptographic assets. However, as chip vendors (Qualcomm, MediaTek, Samsung, etc.) diverge in their TEE implementations, this bastion is not as impenetrable as it seems. At POC 2025/KanxueSDC 2025, our researchers <a href="https://x.com/wugedbl">Dawuge</a> and <a href="https://x.com/HBh25Y">HBh25Y</a> presented their latest findings, diving deep into the vulnerabilities hidden within the fragmented TEE ecosystem.</p>
-<ol>
-<li>
-<p>Architectural Diversity: The Root of Security Logic
-The core of our research lies in a cross-platform analysis of how different vendors define their “Security Boundaries.” We compared the memory isolation schemes and Secure Monitor call flows across major chipsets, revealing how fundamental design philosophies can create unique attack surfaces.</p>
-</li>
-<li>
-<p>Universal vs. Implementation-Specific Vulnerabilities
-Our discovery process focused on core modules like Fingerprint, SecFace, and mPos:</p>
-</li>
-</ol>
-<p>Universal Vulnerabilities: We identified common logical flaws across all architectures stemming from industry-wide misconceptions in sensitive business logic (e.g., biometric template verification).</p>
-<p>Implementation-Specific Vulnerabilities: Beyond TEE OS kernel differences, the TA (Trusted Application) and TEE Driver implementations vary significantly across chips. This “same function, different code” reality breeds unique buffer overflows and privilege escalation risks specific to certain vendors.</p>
-<ol start="3">
-<li>Breaking Boundaries: Blockchain Wallets &#x26; Knox Hardware
-We extended our research to high-value targets:</li>
-</ol>
-<p>Blockchain Wallet Security: By analyzing TEE-resident wallet TAs, we demonstrated how minor flaws in data parsing or Secure Storage interactions could lead to unauthorized private key access or signature tampering.</p>
-<p>Knox Chip Attack Path: For the Samsung Knox architecture, we mapped a sophisticated attack chain—starting from a non-secure world application, leveraging TA flaws to penetrate the TEE Driver, and ultimately achieving physical access control of the Knox hardware chip.</p>
+<h3 id="architectural-diversity-the-root-of-security-logic">Architectural Diversity: The Root of Security Logic</h3>
+<p>The core of our research lies in a cross-platform analysis of how different vendors define their “Security Boundaries.” We compared the memory isolation schemes and Secure Monitor call flows across major chipsets, revealing how fundamental design philosophies can create unique attack surfaces.</p>
+<h3 id="universal-vs-implementation-specific-vulnerabilities">Universal vs. Implementation-Specific Vulnerabilities</h3>
+<p>Our discovery process focused on core modules like Fingerprint, SecFace, and mPOS:</p>
+<p><strong>Universal Vulnerabilities</strong>: We identified common logical flaws across all architectures stemming from industry-wide misconceptions in sensitive business logic (e.g., biometric template verification).</p>
+<p><strong>Implementation-Specific Vulnerabilities</strong>: Beyond TEE OS kernel differences, the TA (Trusted Application) and TEE Driver implementations vary significantly across chips. This “same function, different code” reality breeds unique buffer overflows and privilege escalation risks specific to certain vendors.</p>
+<h3 id="breaking-boundaries-blockchain-wallets--knox-hardware">Breaking Boundaries: Blockchain Wallets &#x26; Knox Hardware</h3>
+<p>We extended our research to high-value targets:</p>
+<p><strong>Blockchain Wallet Security</strong>: By analyzing TEE-resident wallet TAs, we demonstrated how minor flaws in data parsing or Secure Storage interactions could lead to unauthorized private key access or signature tampering.</p>
+<p><strong>Knox Chip Attack Path</strong>: For the Samsung Knox architecture, we mapped a sophisticated attack chain—starting from a non-secure world application, leveraging TA flaws to penetrate the TEE Driver, and ultimately achieving physical access control of the Knox hardware chip.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Through this cross-architecture research, we have helped vendors patch critical risks and established a systematic methodology for TEE security research. As chip technology evolves, understanding these implementation differences remains key to future defense.</p>
-<p>Get in Touch: If you are passionate about TEE, Kernel security, or low-level vulnerability discovery, contact us at [Your Email]. We are always looking for talented researchers to join our team!</p>
+<p>Get in Touch: If you are interested about TEE security, or other security research, feel free to contact us at <a href="mailto:shuffleteam@163.com">shuffleteam</a> or <a href="https://x.com/ShuffleTeam_AI">here</a>.</p>
 <h2 id="resources">Resources:</h2>
 <p>Slides: <a href="https://powerofcommunity.net/2025/slide/j-8096a.pdf">Download PDF</a></p> </div> <div class="text-center mt-8"> <a href="/blog" class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition">← Back to Blog</a> </div>  </div>  <footer class="my-20"> <p class="text-center text-sm text-slate-500">
 Copyright © 2025 ShuffleTeam. All rights reserved.
